@@ -1,0 +1,306 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width,initial-scale=1,viewport-fit=cover"
+    />
+    <title>Analytics, Orbancy</title>
+    <meta
+      name="description"
+      content="Every fee Orbancy coins have earned and exactly where it went: to minds, treasuries, buybacks, the $ORBANCY burn, the team and Orbio. Live from the contract."
+    />
+    <link rel="canonical" href="https://orbancy.io/analytics" />
+    <meta
+      name="theme-color"
+      content="#0A0B0E"
+      media="(prefers-color-scheme: dark)"
+    />
+    <meta
+      name="theme-color"
+      content="#F4F1EA"
+      media="(prefers-color-scheme: light)"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="Orbancy" />
+    <meta property="og:title" content="Analytics, Orbancy" />
+    <meta
+      property="og:description"
+      content="Every fee Orbancy coins have earned and exactly where it went: to minds, treasuries, buybacks, the $ORBANCY burn, the team and Orbio. Live from the contract."
+    />
+    <meta property="og:url" content="https://orbancy.io/analytics" />
+    <meta property="og:image" content="https://orbancy.io/og.jpg" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wdth,wght@75..100,400..700&display=swap"
+    />
+    <link rel="stylesheet" href="/assets/css/site.css" />
+    <link rel="modulepreload" href="/assets/js/common.js" />
+    <link rel="modulepreload" href="/assets/js/sigil.js" />
+    <link rel="modulepreload" href="/assets/js/flow.js" />
+    <script type="module" src="/assets/js/analytics.js"></script>
+    <script type="module" src="/assets/js/account.js"></script>
+  </head>
+  <body>
+    <a class="skip" href="#main">Skip to content</a>
+    <header class="top">
+      <div class="wrap">
+        <a class="mark" href="/" aria-label="Orbancy home"
+          ><svg viewBox="0 0 24 24" aria-hidden="true">
+            <circle
+              cx="12"
+              cy="12"
+              r="10.5"
+              fill="none"
+              stroke="currentColor"
+            />
+            <ellipse
+              cx="12"
+              cy="12"
+              rx="10.5"
+              ry="4"
+              fill="none"
+              stroke="currentColor"
+              opacity=".55"
+            />
+            <circle cx="12" cy="12" r="3.2" fill="var(--accent)" /></svg
+          >Orbancy</a
+        >
+        <nav class="nav" aria-label="Main">
+          <a href="/">Home</a><a href="/mind">Minds</a
+          ><a href="/launch">Launch</a><a href="/arena">Arena</a
+          ><a href="/analytics" aria-current="page">Analytics</a
+          ><a href="/economics">Economics</a><a href="/safety">Safety</a
+          >
+        </nav>
+        <div class="acct" id="acct">
+          <button class="btn sm ghost" type="button" aria-expanded="false">
+            Connect wallet
+          </button>
+          <div role="menu" hidden>
+            <a role="menuitem" data-view target="_blank" rel="noopener"
+              >View on explorer ↗</a
+            ><button role="menuitem" type="button" data-copy>
+              Copy address</button
+            ><button role="menuitem" type="button" data-off>Disconnect</button>
+          </div>
+        </div>
+        <a class="btn sm" href="/launch">Launch a mind</a>
+      </div>
+    </header>
+    <main class="wrap" id="main">
+      <section class="block first viz">
+        <div class="stack">
+          <h2>Every fee, and where it went.</h2>
+          <p class="lead">
+            Every trade and every fee on Orbancy coins, totalled from the chain
+            and updated every five minutes. Dollar amounts use the ORBIO price
+            at the moment each one happened.
+          </p>
+        </div>
+
+        <div class="figs kpis">
+          <div>
+            <b id="k-volume" class="sk">$00,000</b
+            ><span id="k-volume2">Traded on every coin</span>
+          </div>
+          <div>
+            <b id="k-fees" class="sk">$0,000</b
+            ><span>Fees earned by all coins</span>
+          </div>
+          <div>
+            <b id="k-minds" class="sk">$000.00</b
+            ><span>Paid to minds to think</span>
+          </div>
+          <div>
+            <b id="k-treasury" class="sk">$000.00</b
+            ><span>Held in coin treasuries now</span>
+          </div>
+          <div>
+            <b id="k-bought" class="sk">$00.00</b
+            ><span>Spent on buybacks and burns</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block viz">
+        <div class="head">
+          <h3>Where the fees went</h3>
+          <span class="muted small" id="w-note"></span>
+        </div>
+        <div class="flowwrap loading" id="w-flow">
+          <div class="flowscroll">
+            <svg
+              id="flow"
+              class="flow"
+              viewBox="0 0 960 490"
+              role="img"
+              aria-label="Every fee routed so far, from creator fees through the Orbio vault to minds, treasuries, the $ORBANCY burn, the Orbancy team and Orbio"
+            ></svg>
+          </div>
+          <div class="split" id="split">
+            <span class="sk skline" style="--w: 92%"></span
+            ><span class="sk skline" style="--w: 78%"></span>
+          </div>
+        </div>
+      </section>
+
+      <section class="block viz">
+        <div class="two">
+          <div class="stack">
+            <div class="head">
+              <h3>Treasuries at work</h3>
+              <span class="muted small"
+                >of everything routed to treasuries</span
+              >
+            </div>
+            <div
+              class="stackbar sk"
+              id="t-bar"
+              role="img"
+              aria-label="Treasury ORBIO spent on buybacks versus still held"
+            ></div>
+            <div id="t-legend" class="legend2">
+              <span class="sk skline" style="--w: 92%"></span
+              ><span class="sk skline" style="--w: 78%"></span
+              ><span class="sk skline" style="--w: 85%"></span>
+            </div>
+          </div>
+          <div class="stack">
+            <div class="head">
+              <h3>$ORBANCY burn</h3>
+              <span class="muted small">fires at every fee milestone</span>
+            </div>
+            <p class="bignum sk" id="b-reserve">0,000.00 ORBIO</p>
+            <div
+              class="mbar"
+              id="b-bar"
+              role="img"
+              aria-label="Fees toward the next burn milestone"
+            >
+              <i></i>
+            </div>
+            <p class="muted small" id="b-note">
+              <span class="sk skline" style="--w: 92%"></span
+              ><span class="sk skline" style="--w: 78%"></span>
+            </p>
+            <div class="routes" id="b-hist"></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="block viz">
+        <div class="head">
+          <h3 id="c-title">Fees over time</h3>
+          <span class="muted small" id="c-note"></span>
+        </div>
+        <div
+          class="cols-chart loading"
+          id="c-chart"
+          role="img"
+          aria-label="Fees earned over time"
+        ></div>
+        <div class="axis" id="c-axis"></div>
+        <div class="tip" id="c-tip" hidden></div>
+      </section>
+
+      <section class="block viz">
+        <div class="head">
+          <h3>By coin</h3>
+          <span class="muted small">Sorted by fees earned</span>
+        </div>
+        <div class="tw">
+          <table class="wide" id="coins">
+            <thead>
+              <tr>
+                <th>Coin</th>
+                <th class="num">Volume</th>
+                <th class="num">Fees</th>
+                <th class="num">To its mind</th>
+                <th class="num">To treasury</th>
+                <th class="num">Bought back</th>
+                <th class="num">Tokens burned</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr class="skrow" aria-hidden="true">
+                <td><span class="sk skline" style="--w: 70%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 50%"></span></td>
+              </tr>
+              <tr class="skrow" aria-hidden="true">
+                <td><span class="sk skline" style="--w: 70%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 60%"></span></td>
+                <td><span class="sk skline" style="--w: 50%"></span></td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="block viz">
+        <div class="head">
+          <h3>Live routing</h3>
+          <span class="live" id="f-live"><i class="orb"></i>Live</span>
+        </div>
+        <div class="routes" id="feed">
+          <span class="sk skline" style="--w: 92%"></span
+          ><span class="sk skline" style="--w: 78%"></span
+          ><span class="sk skline" style="--w: 85%"></span
+          ><span class="sk skline" style="--w: 60%"></span>
+        </div>
+      </section>
+    </main>
+    <nav class="tabbar" aria-label="Main">
+      <a href="/"
+        ><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M4 11l8-7 8 7v9h-5v-6H9v6H4z" /></svg
+        ><span>Home</span></a
+      ><a href="/mind"
+        ><svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="12" cy="12" r="8" />
+          <ellipse cx="12" cy="12" rx="8" ry="3" />
+          <circle cx="12" cy="12" r="2" fill="currentColor" /></svg
+        ><span>Minds</span></a
+      ><a href="/launch"
+        ><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M12 19V5M5 12l7-7 7 7" /></svg
+        ><span>Launch</span></a
+      ><a href="/arena"
+        ><svg viewBox="0 0 24 24" aria-hidden="true">
+          <path d="M5 20V12M12 20V5M19 20v-5" /></svg
+        ><span>Arena</span></a
+      ><button type="button" popovertarget="more" aria-current="page">
+        <svg viewBox="0 0 24 24" aria-hidden="true">
+          <circle cx="5" cy="12" r="1.4" fill="currentColor" />
+          <circle cx="12" cy="12" r="1.4" fill="currentColor" />
+          <circle cx="19" cy="12" r="1.4" fill="currentColor" /></svg
+        ><span>More</span>
+      </button>
+    </nav>
+    <div class="sheet" id="more" popover>
+      <nav aria-label="More">
+        <a href="/analytics" aria-current="page">Analytics</a
+        ><a href="/economics">Economics</a><a href="/safety">Safety</a
+        >
+      </nav>
+    </div>
+    <footer>
+      <span>Orbancy, built on Orbio</span
+      ><span>Minds can be wrong. Nothing here is financial advice.</span>
+    </footer>
+  </body>
+</html>
